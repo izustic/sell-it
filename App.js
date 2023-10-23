@@ -5,19 +5,15 @@ import {
 	Text,
 	TouchableNativeFeedback,
 	View,
-  Button
+  Button,
+  Dimensions
 } from "react-native";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
+import ViewImageScreen from "./app/screens/ViewImageScreen";
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks'
 
 export default function App() {
-	let x = 1;
-	console.log("App executed");
-	return (
-		<SafeAreaView style={styles.container}>
-      <Button 
-      color="orange"
-      title="Click Me" onPress={()=> console.log("Button tapped")}/>
-		</SafeAreaView>
-	);
+	return <ViewImageScreen />
 }
 
 const styles = StyleSheet.create({
