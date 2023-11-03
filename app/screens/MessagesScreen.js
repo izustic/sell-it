@@ -4,6 +4,7 @@ import ListItem from "../components/ListItem";
 import ListItemDeleteAction from "../components/ListItemDeleteAction";
 import ListItemSeperator from "../components/ListItemSeperator";
 import Screen from "../components/Screen";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const initialMessages = [
 	{
@@ -26,42 +27,44 @@ const initialMessages = [
 
 export default function MessagesScreen() {
 	const [messages, setMessages] = useState(initialMessages);
-	const [refreshing, setRefreshing] =  useState(false)
+	const [refreshing, setRefreshing] = useState(false);
 	const handleDelete = (message) => {
 		setMessages(messages.filter((m) => m.id !== message.id));
 	};
 	return (
-		<Screen>
-			<FlatList
-				data={messages}
-				keyExtractor={(message) => message.id.toString()}
-				renderItem={({ item }) => (
-					<ListItem
-						title={item.title}
-						subTitle={item.description}
-						image={item.image}
-						onPress={() => console.log("message selected", item)}
-						renderRightActions={() => (
-							<ListItemDeleteAction onPress={() => handleDelete(item)} />
-						)}
-					/>
-				)}
-				ItemSeparatorComponent={ListItemSeperator}
-				refreshing={refreshing}
-				onRefresh={()=> {
-					setMessages([
-						{
-							id: 2,
-							title: "T2",
-							description: "D2",
-							image: {
-								uri: "https://source.unsplash.com/random/?jacket",
+		<GestureHandlerRootView>
+			<Screen>
+				<FlatList
+					data={messages}
+					keyExtractor={(message) => message.id.toString()}
+					renderItem={({ item }) => (
+						<ListItem
+							title={item.title}
+							subTitle={item.description}
+							image={item.image}
+							onPress={() => console.log("message selected", item)}
+							renderRightActions={() => (
+								<ListItemDeleteAction onPress={() => handleDelete(item)} />
+							)}
+						/>
+					)}
+					ItemSeparatorComponent={ListItemSeperator}
+					refreshing={refreshing}
+					onRefresh={() => {
+						setMessages([
+							{
+								id: 2,
+								title: "T2",
+								description: "D2",
+								image: {
+									uri: "https://source.unsplash.com/random/?jacket",
+								},
 							},
-						}, 
-					])
-				}}
-			/>
-		</Screen>
+						]);
+					}}
+				/>
+			</Screen>
+		</GestureHandlerRootView>
 	);
 }
 

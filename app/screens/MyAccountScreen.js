@@ -5,6 +5,7 @@ import ListIcons from "../components/ListIcons";
 import ListItemSeperator from "../components/ListItemSeperator";
 import UserDetails from "../components/UserDetails";
 import colors from "../config/colors";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function MyAccountScreen() {
 	const icons = [
@@ -22,6 +23,7 @@ export default function MyAccountScreen() {
 		},
 	];
 	return (
+		<GestureHandlerRootView>
 		<View style={styles.accountScreen}>
 			<View style={styles.userContainer}>
 				<UserDetails
@@ -52,6 +54,7 @@ export default function MyAccountScreen() {
 				<ListIcons name="logout" color={colors.info} details="Log Out" />
 			</View>
 		</View>
+		</GestureHandlerRootView>
 	);
 }
 
