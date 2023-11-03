@@ -1,3 +1,4 @@
+import { MaterialIcons } from "@expo/vector-icons";
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import colors from "../config/colors";
@@ -5,8 +6,12 @@ import colors from "../config/colors";
 function ViewImageScreen(props) {
 	return (
 		<View style={styles.container}>
-			<View style={styles.closeIcon}></View>
-			<View style={styles.deleteIcon}></View>
+			<View style={styles.closeIcon}>
+				<MaterialIcons name="close" size={30} color={colors.white} />
+			</View>
+			<View style={styles.deleteIcon}>
+				<MaterialIcons name="delete" size={30} color={colors.white} />
+			</View>
 			<Image
 				resizeMode="contain"
 				style={styles.image}
@@ -18,9 +23,6 @@ function ViewImageScreen(props) {
 
 const styles = StyleSheet.create({
 	closeIcon: {
-		width: 50,
-		height: 50,
-		backgroundColor: colors.primary,
 		position: "absolute",
 		top: 40,
 		left: 20,
@@ -30,9 +32,6 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 	deleteIcon: {
-		width: 50,
-		height: 50,
-		backgroundColor: colors.secondary,
 		position: "absolute",
 		top: 40,
 		right: 20,

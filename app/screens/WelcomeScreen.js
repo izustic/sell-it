@@ -1,10 +1,12 @@
 import React from "react";
 import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
+import AppButton from "../components/AppButton";
 import colors from "../config/colors";
 
 function WelcomeScreen(props) {
 	return (
 		<ImageBackground
+			blurRadius={10}
 			style={styles.background}
 			source={{ uri: "https://source.unsplash.com/random/?minimalist" }}
 		>
@@ -13,10 +15,13 @@ function WelcomeScreen(props) {
 					style={styles.logo}
 					source={require("../assets/sellit-green.png")}
 				/>
-				<Text> Sell What You Don't Need</Text>
+				<Text style={styles.tagline}> Sell What You Don't Need</Text>
 			</View>
-			<View style={styles.loginButton}></View>
-			<View style={styles.registerButton}></View>
+			<View style={styles.buttonContainer}>
+				<AppButton title="Login" onPress={() => console.log("tapped")} bgCol="primary" />
+				<AppButton title="Register" onPress={() => console.log("tapped")} bgCol="secondary"/>
+				
+			</View>
 		</ImageBackground>
 	);
 }
@@ -25,11 +30,6 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: "flex-end",
 		alignItems: "center",
-	},
-	loginButton: {
-		width: "100%",
-		height: 70,
-		backgroundColor: colors.primary,
 	},
 	logo: {
 		width: 60,
@@ -41,11 +41,15 @@ const styles = StyleSheet.create({
 		top: 70,
 		alignItems: "center",
 	},
-	registerButton: {
+	buttonContainer: {
 		width: "100%",
-		height: 70,
-		backgroundColor: colors.secondary,
+		padding: 20
 	},
+	tagline: {
+		fontSize: 25,
+		fontWeight: "600",
+		paddingVertical: 20
+	}
 });
 
 export default WelcomeScreen;

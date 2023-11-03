@@ -1,19 +1,13 @@
-import { StatusBar } from "expo-status-bar";
-import {
-	SafeAreaView,
-	StyleSheet,
-	Text,
-	TouchableNativeFeedback,
-	View,
-  Button,
-  Dimensions
-} from "react-native";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import ViewImageScreen from "./app/screens/ViewImageScreen";
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks'
+import { StyleSheet } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import MessagesScreen from "./app/screens/MessagesScreen";
 
 export default function App() {
-	return <ViewImageScreen />
+	return (
+		<GestureHandlerRootView>
+			<MessagesScreen />
+		</GestureHandlerRootView>
+	);
 }
 
 const styles = StyleSheet.create({
