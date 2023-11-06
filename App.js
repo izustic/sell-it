@@ -1,11 +1,13 @@
 // import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+
 import MessagesScreen from "./app/screens/MessagesScreen";
-import MyAccountScreen from "./app/screens/MyAccountScreen";
+import AccountScreen from "./app/screens/AccountScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
+import AppTextInput from "./app/components/AppTextInput";
 
 export default function App() {
 	return (
@@ -13,8 +15,12 @@ export default function App() {
 			 {/* <ViewImageScreen /> */}
 			{/* <WelcomeScreen /> */}
 			{/* <MessagesScreen />  */}
-			{/* <MyAccountScreen /> */}
-			<ListingsScreen />
+			{/* <AccountScreen /> */}
+			<AppTextInput 
+				placeholder="Username"
+				icon="email"
+			/>
+			{/* <ListingsScreen /> */}
 			{/* <ListingDetailsScreen /> */}
 		</GestureHandlerRootView>
 	);

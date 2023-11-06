@@ -1,13 +1,14 @@
 import Constants from "expo-constants";
 import React from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, View, Screen } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+
 import ListIcons from "../components/ListIcons";
 import ListItemSeperator from "../components/ListItemSeperator";
 import UserDetails from "../components/UserDetails";
 import colors from "../config/colors";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-export default function MyAccountScreen() {
+export default function AccountScreen() {
 	const icons = [
 		{
 			id: 1,
