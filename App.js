@@ -8,23 +8,38 @@ import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 import AppTextInput from "./app/components/AppTextInput";
+import AppSwitch from "./app/components/AppSwitch"
+import AppPicker from "./app/components/AppPicker";
+import Screen from "./app/components/Screen";
+
+const categories = [
+	{ label: "Furniture", value: 1},
+	{ label: "Clothing", value: 2},
+	{ label: "Electronics", value: 3},
+]
+
 
 export default function App() {
 	return (
-		<GestureHandlerRootView style={{ flex: 1 }}>
+		<Screen>
 			 {/* <ViewImageScreen /> */}
 			{/* <WelcomeScreen /> */}
 			{/* <MessagesScreen />  */}
 			{/* <AccountScreen /> */}
-			<AppTextInput 
-				placeholder="Username"
-				icon="email"
-			/>
+			{/* <AppTextInput 
+			placeholder="Username"
+			icon="email"
+		/> */}
+			<AppPicker items={categories} icon="apps" placeholder="Category" />
+			<AppTextInput icon="email" placeholder="Email" />
+			{/* <AppSwitch /> */}
 			{/* <ListingsScreen /> */}
 			{/* <ListingDetailsScreen /> */}
-		</GestureHandlerRootView>
+		</Screen>
 	);
 }
+		// <GestureHandlerRootView style={{ flex: 1 }}>
+		// 			</GestureHandlerRootView>
 
 // import MessagesScreen from "./app/screens/MessagesScreen";
 // import MyAccountScreen from "./app/screens/MyAccountScreen";
