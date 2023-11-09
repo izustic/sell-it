@@ -10,5 +10,6 @@ export default {
 		fontFamily: Platform.OS === "android" ? "sans-serif" : "System",
 		// flex: 1,
 		// backgroundColor: "red",
+		width: "100%"
 	},
 };
