@@ -9,18 +9,18 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 const initialMessages = [
 	{
 		id: 1,
-		title: "T1",
-		description: "D1",
+		title: "Jimmy Shoes",
+		description: "A couple of nice pure Italian leather Jimmy shoes. Completely ergonomic and with threaded sole for that firm grip",
 		image: {
-			uri: "https://source.unsplash.com/random/?jacket",
+			uri: "https://source.unsplash.com/random/?shoes",
 		},
 	},
 	{
 		id: 2,
-		title: "T2",
-		description: "D2",
+		title: "Smart Glasses",
+		description: "A pair of spectacles, Harry Potter inspired. With smart view integration. Has all functionalities of a smart phone. Just super cool",
 		image: {
-			uri: "https://source.unsplash.com/random/?jacket",
+			uri: "https://source.unsplash.com/random/?glasses",
 		},
 	},
 ];
@@ -53,11 +53,11 @@ export default function MessagesScreen() {
 					onRefresh={() => {
 						setMessages([
 							{
-								id: 2,
-								title: "T2",
-								description: "D2",
+								id: 1,
+								title: "Jimmy Shoes",
+								description: "A couple of nice pure Italian leather Jimmy shoes. Completely ergonomic and with threaded sole for that firm grip",
 								image: {
-									uri: "https://source.unsplash.com/random/?jacket",
+									uri: "https://source.unsplash.com/random/?shoes",
 								},
 							},
 						]);
