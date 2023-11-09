@@ -2,6 +2,8 @@
 import React from "react";
 import { Keyboard, View } from "react-native";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
+import ListingDetailsScreen from './app/screens/ListingDetailsScreen'
+import MessagesScreen from './app/screens/MessagesScreen'
 
 export default function App() {
 	const shouldSetRespond = () => true;
@@ -12,12 +14,12 @@ export default function App() {
 			onStartShouldSetResponder={shouldSetRespond}
 			style={{ height: "100%" }}
 		>
-			<ListingEditScreen />
+			{/* <ListingEditScreen /> */}
 			{/* <RegisterScreen /> */}
 			{/* <LoginScreen /> */}
 			{/* <ViewImageScreen /> */}
 			{/* <WelcomeScreen /> */}
-			{/* <MessagesScreen />  */}
+			<MessagesScreen /> 
 			{/* <AccountScreen /> */}
 			{/* <AppTextInput 
 			placeholder="Username"

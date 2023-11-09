@@ -20,7 +20,6 @@ const categories = [
 ]
 
 export default function ListingEditScreen() {
-  console.log("EDIT SCREEN!!!");
 	return (
 		<Screen>
 			<View style={styles.container}>
