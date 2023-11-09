@@ -8,7 +8,7 @@ export default {
 		color: colors.dark,
 		fontSize: 18,
 		fontFamily: Platform.OS === "android" ? "sans-serif" : "System",
-		flex: 1,
+		// flex: 1,
 		// backgroundColor: "red",
 	},
 };
