@@ -3,6 +3,7 @@ import { StyleSheet, Text, TouchableHighlight, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Swipable from "react-native-gesture-handler/Swipeable";
 import colors from "../config/colors";
+import Icon from './Icon';
 
 export default function ListIcons({
 	details,
@@ -15,13 +16,12 @@ export default function ListIcons({
 		<Swipable renderRightActions={renderRightActions}>
 			<TouchableHighlight underlayColor={colors.light} onPress={onPress}>
 				<View style={styles.container}>
-					<View style={[styles.iconContainer, {backgroundColor: color}]}>
-						<MaterialCommunityIcons
-							name={name}
-							size={24}
-							color={colors.white}
-						/>
-					</View>
+					<Icon 
+						name={name}
+						backgroundColor={color}
+						size={24}
+						backgroundSize={40}
+					/>
 					<View style={styles.listingDetails}>
 						<Text style={styles.details}>{details}</Text>
 					</View>
@@ -42,11 +42,12 @@ const styles = StyleSheet.create({
 		borderRadius: 50,
 		marginRight: 10,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
 	},
 	listingDetails: {
 		flexDirection: "column",
 		justifyContent: "center",
+		marginLeft: 10
 	},
 	details: {
 		fontWeight: "600",
