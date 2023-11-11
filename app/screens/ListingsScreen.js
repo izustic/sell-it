@@ -1,9 +1,8 @@
-import { StyleSheet, Text, View, FlatList, Platform, SafeAreaView } from 'react-native'
-import React, {useState} from 'react'
-import colors from '../config/colors'
-import ListCard from '../components/ListCard'
-import Screen from "../components/Screen";
+import { FlatList, SafeAreaView, StyleSheet } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import Screen from "../components/Screen";
+import ListCard from "../components/lists/ListCard";
+import colors from "../config/colors";
 
 const cards = [
 	{
@@ -25,33 +24,32 @@ const cards = [
 ];
 
 export default function ListingsScreen() {
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <GestureHandlerRootView>
-			<Screen>
-				<FlatList
-					data={cards}
-					keyExtractor={(card) => card.id.toString()}
-					renderItem={({ item }) => (
-						<ListCard
-							title={item.title}
-							price={item.price}
-							image={item.image}
-							onPress={() => console.log("message selected", item)}
-						/>
-					)}
-				/>
-			</Screen>
-		</GestureHandlerRootView>
-    </SafeAreaView>
-  )
+	return (
+		<SafeAreaView style={styles.container}>
+			<GestureHandlerRootView>
+				<Screen>
+					<FlatList
+						data={cards}
+						keyExtractor={(card) => card.id.toString()}
+						renderItem={({ item }) => (
+							<ListCard
+								title={item.title}
+								price={item.price}
+								image={item.image}
+								onPress={() => console.log("message selected", item)}
+							/>
+						)}
+					/>
+				</Screen>
+			</GestureHandlerRootView>
+		</SafeAreaView>
+	);
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.light,
-    padding: 15,
-    flex: 1
-  }
-})
+	container: {
+		backgroundColor: colors.light,
+		padding: 15,
+		flex: 1,
+	},
+});

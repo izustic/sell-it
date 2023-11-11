@@ -1,10 +1,9 @@
 import Constants from "expo-constants";
-import React from "react";
-import { FlatList, StyleSheet, View, Screen } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-import ListIcons from "../components/ListIcons";
-import ListItemSeperator from "../components/ListItemSeperator";
+import ListIcons from "../components/lists/ListIcons";
+import ListItemSeperator from "../components/lists/ListItemSeperator";
 import UserDetails from "../components/UserDetails";
 import colors from "../config/colors";
 
@@ -25,36 +24,36 @@ export default function AccountScreen() {
 	];
 	return (
 		<GestureHandlerRootView>
-		<View style={styles.accountScreen}>
-			<View style={styles.userContainer}>
-				<UserDetails
-					image={{
-						uri: "https://lh3.googleusercontent.com/pw/ADCreHc7ekTenEyOI6Kseo9iYoGNMb_d3v6dEiI0pb-0uDRohqx-IhFDdZyMCZ3SfIvhLcr7x9MnpKnmJ8eWJmeVKvWGj0DS15JClj7QEEU4nSOlo7dP2NRBrqSWyuqbHjP71iCVwaQdsqzq4z7WRnxhCyc8=w714-h714-s-no-gm?authuser=0?.jpg",
-					}}
-					name="Izu Obi"
-					email="izustix@gmail.com"
-				/>
-			</View>
-			<View>
-				<FlatList
-					style={styles.userContainer}
-					data={icons}
-					keyExtractor={(icon) => icon.id.toString()}
-					renderItem={({ item }) => (
-						<ListIcons
-							name={item.name}
-							color={item.color}
-							details={item.details}
-						/>
-					)}
-					ItemSeparatorComponent={ListItemSeperator}
-				/>
-			</View>
+			<View style={styles.accountScreen}>
+				<View style={styles.userContainer}>
+					<UserDetails
+						image={{
+							uri: "https://lh3.googleusercontent.com/pw/ADCreHc7ekTenEyOI6Kseo9iYoGNMb_d3v6dEiI0pb-0uDRohqx-IhFDdZyMCZ3SfIvhLcr7x9MnpKnmJ8eWJmeVKvWGj0DS15JClj7QEEU4nSOlo7dP2NRBrqSWyuqbHjP71iCVwaQdsqzq4z7WRnxhCyc8=w714-h714-s-no-gm?authuser=0?.jpg",
+						}}
+						name="Izu Obi"
+						email="izustix@gmail.com"
+					/>
+				</View>
+				<View>
+					<FlatList
+						style={styles.userContainer}
+						data={icons}
+						keyExtractor={(icon) => icon.id.toString()}
+						renderItem={({ item }) => (
+							<ListIcons
+								name={item.name}
+								color={item.color}
+								details={item.details}
+							/>
+						)}
+						ItemSeparatorComponent={ListItemSeperator}
+					/>
+				</View>
 
-			<View style={styles.logoutContainer}>
-				<ListIcons name="logout" color={colors.info} details="Log Out" />
+				<View style={styles.logoutContainer}>
+					<ListIcons name="logout" color={colors.info} details="Log Out" />
+				</View>
 			</View>
-		</View>
 		</GestureHandlerRootView>
 	);
 }
