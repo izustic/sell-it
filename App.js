@@ -28,10 +28,6 @@ export default function App() {
 			{/* <WelcomeScreen /> */}
 			{/* <MessagesScreen />  */}
 			{/* <AccountScreen /> */}
-			{/* <AppTextInput 
-			placeholder="Username"
-			icon="email"
-		/> */}
 			{/* <AppSwitch /> */}
 			{/* <ListingsScreen /> */}
 			{/* <ListingDetailsScreen /> */}
