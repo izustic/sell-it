@@ -1,7 +1,14 @@
-import { StyleSheet, Text, View, FlatList, Platform, SafeAreaView } from 'react-native'
-import React, {useState} from 'react'
-import colors from '../config/colors'
-import ListCard from '../components/ListCard'
+import {
+	StyleSheet,
+	Text,
+	View,
+	FlatList,
+	Platform,
+	SafeAreaView,
+} from "react-native";
+import React, { useState } from "react";
+import colors from "../config/colors";
+import ListCard from "../components/lists/ListCard";
 import Screen from "../components/Screen";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
@@ -20,39 +27,38 @@ const cards = [
 		price: 1000,
 		image: {
 			// uri: "https://source.unsplash.com/random/?sofa",
-			uri: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y291Y2h8ZW58MHx8MHx8fDA%3D"
+			uri: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y291Y2h8ZW58MHx8MHx8fDA%3D",
 		},
 	},
 ];
 
 export default function ListingsScreen() {
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <GestureHandlerRootView>
-			<Screen>
-				<FlatList
-					data={cards}
-					keyExtractor={(card) => card.id.toString()}
-					renderItem={({ item }) => (
-						<ListCard
-							title={item.title}
-							price={item.price}
-							image={item.image}
-							onPress={() => console.log("message selected", item)}
-						/>
-					)}
-				/>
-			</Screen>
-		</GestureHandlerRootView>
-    </SafeAreaView>
-  )
+	return (
+		<SafeAreaView style={styles.container}>
+			<GestureHandlerRootView>
+				<Screen>
+					<FlatList
+						data={cards}
+						keyExtractor={(card) => card.id.toString()}
+						renderItem={({ item }) => (
+							<ListCard
+								title={item.title}
+								price={item.price}
+								image={item.image}
+								onPress={() => console.log("message selected", item)}
+							/>
+						)}
+					/>
+				</Screen>
+			</GestureHandlerRootView>
+		</SafeAreaView>
+	);
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.light,
-    padding: 15,
-    flex: 1
-  }
-})
+	container: {
+		backgroundColor: colors.light,
+		padding: 15,
+		flex: 1,
+	},
+});

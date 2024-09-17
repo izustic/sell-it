@@ -1,15 +1,12 @@
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
-import AppText from "../components/AppText";
-import colors from "../config/colors";
+import AppText from "../AppText";
+import colors from "../../config/colors";
 
-export default function ListCard({title, price, image}) {
+export default function ListCard({ title, price, image }) {
 	return (
 		<View style={styles.cardContainer}>
-			<Image
-				style={styles.image}
-				source={image}
-			/>
+			<Image style={styles.image} source={image} />
 			<View style={styles.detailsContainer}>
 				<AppText style={styles.title}>{title}</AppText>
 				<AppText style={styles.price}>${price}</AppText>
@@ -19,12 +16,12 @@ export default function ListCard({title, price, image}) {
 }
 
 const styles = StyleSheet.create({
-  cardContainer: {
-    borderRadius: 15,
-    backgroundColor: colors.white,
-    overflow: "hidden",
-    marginBottom: 15
-  },
+	cardContainer: {
+		borderRadius: 15,
+		backgroundColor: colors.white,
+		overflow: "hidden",
+		marginBottom: 15,
+	},
 	detailsContainer: {
 		padding: 20,
 	},
@@ -41,9 +38,9 @@ const styles = StyleSheet.create({
 	title: {
 		fontSize: 20,
 		fontWeight: "500",
-    fontWeight: "bold"
+		fontWeight: "bold",
 	},
-  userContainer: {
-    marginTop: 20
-  }
+	userContainer: {
+		marginTop: 20,
+	},
 });
